@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CMCS.Models.ClaimForm>
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container">
+    <h2 class="mt-4">Dashboard</h2>
+
+    <!-- Button to create a new claim -->
+    <div class="mb-4">
+        <a class="btn btn-primary" href="@Url.Action("SubmitClaim", "Claim")">Create New Claim</a>
+    </div>
+
+    <!-- Table to display the user's claims -->
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Hours Worked</th>
+                <th>Hourly Rate</th>
+                <th>Status</th>
+                <th>Notes</th>
+                <th>Documents</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var claim in Model)
+                {
+                    <tr>
+                        <td>@claim.Tittle</td>
+                        <td>@claim.HoursWorked</td>
+                        <td>@claim.HourlyRate.ToString("C")</td>
+                        <td>
+                            @if (claim.Status == CMCS.Models.ClaimStatus.Pending)
+                            {
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            }
+                            else if (claim.Status == CMCS.Models.ClaimStatus.Verified)
+                            {
+                                <span class="badge bg-info">Verified</span>
+                            }
+                            else if (claim.Status == CMCS.Models.ClaimStatus.Approved)
+                            {
+                                <span class="badge bg-success">Approved</span>
+                            }
+                            else if (claim.Status == CMCS.Models.ClaimStatus.Rejected)
+                            {
+                                <span class="badge bg-danger">Rejected</span>
+                            }
+                        </td>
+                        <td>@claim.Notes</td>
+                        <td>
+                            @if (claim.Documents.Any())
+                            {
+                                <ul>
+                                    @foreach (var document in claim.Documents)
+                                    {
+                                        <li><a href="@document.FilePath" target="_blank">@document.FileName</a></li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <span>No Documents</span>
+                            }
+                        </td>
+                       
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" class="text-center">No claims found. Click "Create New Claim" to submit a claim.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

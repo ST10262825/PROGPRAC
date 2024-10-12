@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Home - Contract Monthly Claim System";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            background-color: #f4f4f9; /* Light background color */
+        }
+
+        .header {
+            background-color: #0056b3; /* Dark blue header */
+            color: white;
+            padding: 20px 0;
+        }
+
+        h2 {
+            color: #0056b3; /* Dark blue for section headings */
+        }
+
+        .list-group-item {
+            background-color: #e9ecef; /* Light gray for list items */
+        }
+
+        .footer {
+            background-color: #0056b3; /* Dark blue footer */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .contact-info {
+            background-color: #e9ecef; /* Light gray background for contact info */
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Bright blue for primary buttons */
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Darken on hover */
+                border-color: #004085; /* Darker border on hover */
+            }
+    </style>
+</head>
+<body>
+    <header class="header text-center">
+        <h1>Welcome to the Contract Monthly Claim System (CMCS)</h1>
+    </header>
+
+    <div class="container mt-5">
+        <section>
+            <h2>About the System</h2>
+            <p>
+                The Contract Monthly Claim System (CMCS) is a web-based application designed to streamline the process of submitting and approving monthly claims for Independent Contractor (IC) lecturers. Our goal is to enhance efficiency, accuracy, and user satisfaction in managing claims.
+            </p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Key Features</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Easy submission of claims for lecturers with intuitive forms.</li>
+                <li class="list-group-item">Secure document uploads for supporting evidence.</li>
+                <li class="list-group-item">Clear tracking of claim status throughout the approval process.</li>
+                <li class="list-group-item">Role-based access for Coordinators and Managers to verify and approve claims.</li>
+                <li class="list-group-item">Robust error handling and user-friendly messages for a seamless experience.</li>
+            </ul>
+        </section>
+
+        <section class="mt-4 contact-info">
+            <h2>Contact Information</h2>
+            <p>
+                For any inquiries or support, please contact us at:
+                <br />
+                <strong>Email:</strong> support@cmcs.com
+                <br />
+                <strong>Phone:</strong> +1 (234) 567-8900
+            </p>
+        </section>
+    </div>
+
+    <footer class="footer text-center">
+        <p>© 2024 Contract Monthly Claim System. All rights reserved.</p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
